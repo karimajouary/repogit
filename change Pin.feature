@@ -14,3 +14,11 @@ Feature: change PIN
   And  I try to change the PIN to the original PIN number  
   Then I should see a warning message  
   And the system should not hava changed my PIN
+
+  Scenario: Try to change PIN to the same as before  
+  Given I have been issued a new card  
+  And I insert the card, entering the correct PIN  
+  When I choose "Change PIN" from the menu  
+  And  I try to change the PIN to the original PIN number  
+  Then I should see a warning message  
+  And the system should not hava changed my PIN
